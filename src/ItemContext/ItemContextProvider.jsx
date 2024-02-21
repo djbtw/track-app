@@ -14,7 +14,22 @@ export default function ItemContextProvider({ children }) {
     setItems(prev => [...prev,newItem])
   }
 
+  function onDeleteItem(id) {
+    const newItems = items.filter(item => item.id != id);
+    setItems(newItems);
+  }
+
+  function onCheckBoxChange(id) {
+    const newItems = items.map(item => {
+      if (item.id === id) {
+        item.checked = !item.checked;
+      }
+      return item
+    })
+    setItems(newItems);
+  }
+
   return (
-    <ItemContext.Provider value={{ items,onAddItem }}>{children}</ItemContext.Provider>
+    <ItemContext.Provider value={{ items,onAddItem,onDeleteItem,onCheckBoxChange }}>{children}</ItemContext.Provider>
   )
 }

@@ -13,8 +13,8 @@ export default function AddItems() {
         <Button text={'Add Item'} onClickFunction={() => { onAddItem(addItem) }}></Button>
       </section>
       <section>
-        <Button text={'makr complete'}></Button>
-        <Button></Button>
+        <Button text={'mark all completed'}></Button>
+        <Button text={'mark all not completed'}></Button>
         <Button></Button>
         <Button></Button>
       </section>

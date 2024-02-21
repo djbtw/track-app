@@ -1,14 +1,15 @@
 import { useItemContext } from "../hooks/customHooks"
 
 export default function Items() {
-  const { items } = useItemContext();
+  const { items,onDeleteItem,onCheckBoxChange } = useItemContext();
+
   return (
-    <div>
-      {items.map(item => <div key={item.id}>
-        <h1>{item.id}</h1>
-        <label>
-          <input checked={item.checked} type="checkbox"></input>
-          <h1>{item.text}</h1>
+    <div className="itemsList">
+      {items.map(item => <div key={item.id} className="item">
+        <label className="item-label">
+          <input onChange={() => onCheckBoxChange(item.id)} checked={item.checked} type="checkbox"></input>
+          <p>{item.text}</p>
+          <span onClick={() => onDeleteItem(item.id)} className="item-icon">❌</span>
         </label>
       </div>)}
     </div>

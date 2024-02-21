@@ -8,3 +8,19 @@
 .content {
   display: flex;
 }
+
+.item {
+  display: flex;
+}
+
+.item-label {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.item-icon {
+  margin-left: auto;
+  font-size: 12px;
+}
